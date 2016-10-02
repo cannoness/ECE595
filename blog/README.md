@@ -29,6 +29,12 @@ To redirect `localhost:3000` to home page of blog application we need to configu
   root 'posts#index'
 ```
 
+### Making comments visible for a post
+Change `routes.rb` to say that a post has multiple comments.
+```
+resources :posts, :has_many => :comments
+```
+Then edit post view to show comments related to that particular post.
 ## Second iteration
 In this iteration we create users with roles using `rollify`. We define following roles
 
@@ -37,10 +43,12 @@ In this iteration we create users with roles using `rollify`. We define followin
   * Can comment on posts.
 2. guest
   * Can view posts.
+  * Can post comments.
+  * Is not registered.
 3. follower
   * Can view posts
   * Can comment on posts.
-  * Will be notified if the post is edited or a new comment is posted.
+  * Will be notified if there is new post.
 4. moderator
   * Can view posts.
   * Can delete posts.
