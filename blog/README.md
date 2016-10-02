@@ -29,7 +29,9 @@ In this iteration we create users with roles using `rollify`. We define followin
   * Can create post.
   * Can comment on posts.
   * Can edit his own posts.
+
 ### Instructions and commands
+
 #### Generating users scaffold
 ```
 $ rails generate scaffold user email:string
