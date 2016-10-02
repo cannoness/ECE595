@@ -1,6 +1,7 @@
 # README
 
-## Commands used for first iteration
+## First iteration
+Below are commands that create simple blog application.
 ```
 $ rails new blog
 hellow
@@ -9,7 +10,26 @@ $ rails generate scaffold Post title:string body:text
 $ rails generate scaffold Comment post:references body:text
 $ rake db:migrate
 ```
-## Commands used for second iteration
+### Relating posts and comments
+In `post.rb`
+```
+class Post < ApplicationRecord
+  has_many :comments
+end
+```
+In `comments.rb`
+```
+class Comment < ApplicationRecord
+  belongs_to :post
+end
+```
+### Setting up main page
+To redirect `localhost:3000` to home page of blog application we need to configure `config\routes.rb` to include following line,
+```
+  root 'posts#index'
+```
+
+## Second iteration
 In this iteration we create users with roles using `rollify`. We define following roles
 
 1. user
