@@ -10,8 +10,8 @@ $ rails generate scaffold Comment post:references body:text
 $ rake db:migrate
 ```
 ## Commands used for second iteration
-In this iteration we create users with roles using `rollify`. We define
-following roles
+In this iteration we create users with roles using `rollify`. We define following roles
+
 1. user
   * Can view posts.
   * Can comment on posts.
